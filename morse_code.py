@@ -30,21 +30,15 @@ led=LED(17)
 def lampeggia(mors):
     for letter in mors:
         if letter == ' ':
-        
-
             led.off()
-            sleep(1)
+            sleep(0.5)
         elif letter == '.':
-            
-
             led.on()
-            sleep(2)
+            sleep(0.1)
             led.off()
         elif letter == '-':
-           
-            
             led.on()
-            sleep(3)
+            sleep(0.3)
             led.off()
 
 lampeggia(encrypt(stringa))
