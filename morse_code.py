@@ -33,18 +33,18 @@ def lampeggia(mors):
         
 
             led.off()
-            sleep(1000)
+            sleep(1)
         elif letter == '.':
             
 
             led.on()
-            sleep(200)
+            sleep(2)
             led.off()
         elif letter == '-':
            
             
             led.on()
-            sleep(600)
+            sleep(3)
             led.off()
 
 lampeggia(encrypt(stringa))
