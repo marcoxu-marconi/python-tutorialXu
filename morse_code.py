@@ -1,5 +1,5 @@
-import RPi.GPIO as GPIO
-
+""" import RPi.GPIO as GPIO
+import time 
 file = open('./input.txt','r')
 
 stringa = file.read()
@@ -25,26 +25,39 @@ def encrypt(message):
     return cipher
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(1, GPIO.out)
+GPIO.setup(17, GPIO.out)
 
 def lampeggia(mors):
     for letter in mors:
         if letter == ' ':
             """ print(' ', end='') """
 
-            GPIO.output(1, GPIO.LOW)
+            GPIO.output(17, GPIO.LOW)
             sleep(1000)
         elif letter == '.':
             """ print('.', end='') """
 
-            GPIO.output(1, GPIO.HIGH)
+            GPIO.output(17, GPIO.HIGH)
             sleep(200)
-            GPIO.output(1, GPIO.LOW)
+            GPIO.output(17, GPIO.LOW)
         elif letter == '-':
             """ print('-', end='') """
             
-            GPIO.output(1, GPIO.HIGH)
+            GPIO.output(17, GPIO.HIGH)
             sleep(600)
-            GPIO.output(1, GPIO.LOW)
+            GPIO.output(17, GPIO.LOW)
 
-lampeggia(encrypt(stringa))
+lampeggia(encrypt(stringa)) """
+
+
+
+from gpiozero import LED
+from time import sleep
+
+led = LED(17)
+
+while True:
+    led.on()
+    sleep(1)
+    led.off()
+    sleep(1)
