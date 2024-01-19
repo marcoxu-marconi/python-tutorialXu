@@ -30,18 +30,18 @@ GPIO.setup(17, GPIO.out)
 def lampeggia(mors):
     for letter in mors:
         if letter == ' ':
-            """ print(' ', end='') """
+        
 
             GPIO.output(17, GPIO.LOW)
             sleep(1000)
         elif letter == '.':
-            """ print('.', end='') """
+            
 
             GPIO.output(17, GPIO.HIGH)
             sleep(200)
             GPIO.output(17, GPIO.LOW)
         elif letter == '-':
-            """ print('-', end='') """
+           
             
             GPIO.output(17, GPIO.HIGH)
             sleep(600)
