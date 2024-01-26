@@ -19,10 +19,10 @@ morse_dict = {
     '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-', '&': '.-...',
     ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.',
     '$': '...-..-', '@': '.--.-.', 
-    'è': '.', 'é': '.', 'à': '.-', 'ù': '..--', 'ì': '..', 'ò': '---.'
+    'è': '.', 'é': '.', 'à': '.-', 'ù': '..-', 'ì': '..', 'ò': '---',  #filtro per lettere italiane, trattali come quei normali
 }
 
-morse_dict = {k.upper(): v for k, v in morse_dict.items()} #trasforma in maiuscolo
+morse_dict = {k.lower(): v for k, v in morse_dict.items()} #trasforma in maiuscolo
 
 def encrypt(message):
     cipher = ''
