@@ -34,12 +34,14 @@ def lampeggia(mors):
             sleep(0.5)
         elif letter == '.':
             led.on()
-            sleep(0.1)
+            sleep(0.1) """1unit"""
             led.off()
+            sleep(0.1)   """ interelement space """
         elif letter == '-':
             led.on()
-            sleep(0.3)
+            sleep(0.3) """3unit"""
             led.off()
+            sleep(0.1) """interelement space"""
 
 lampeggia(encrypt(stringa))
 
