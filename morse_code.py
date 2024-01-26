@@ -13,35 +13,44 @@ morse_dict = {
     '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '.': '.-.-.-', ',': '--..--',
     '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-', '&': '.-...',
     ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.',
-    '$': '...-..-', '@': '.--.-.', ' ': '/'
+    '$': '...-..-', '@': '.--.-.', 
 }
 
 def encrypt(message):
     cipher = ''
     for letter in message.upper():
         if letter in morse_dict:
-            cipher += morse_dict[letter] + ' '
-        else:
-            cipher += ' '
+            cipher += morse_dict[letter] + ' ' #spazio tra le lettere
+        elif letter == ' ':
+            cipher += '/' #spazio tra le parole
     return cipher
 
 led=LED(17)
 
+# 1 unit = 0.1 second
 def lampeggia(mors):
     for letter in mors:
-        if letter == ' ':
+        if letter == ' ': 
             led.off()
-            sleep(0.5)
-        elif letter == '.':
+            sleep(0.3) #spazio tra le lettere di Stessa parola
+        elif letter == '.': 
             led.on()
-            sleep(0.1) """1unit"""
+            sleep(0.1) #shortmark
             led.off()
-            sleep(0.1)   """ interelement space """
+            sleep(0.1)  #interelement gap
         elif letter == '-':
             led.on()
-            sleep(0.3) """3unit"""
+            sleep(0.3) #longmark
             led.off()
-            sleep(0.1) """interelement space"""
+            sleep(0.1) #interelement gap
+        elif letter == '/':
+            led.off()
+            sleep(0.7) #spazio tra le parole 
+
+
+print(encrypt(stringa))
 
 lampeggia(encrypt(stringa))
+
+
 
