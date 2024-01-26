@@ -1,7 +1,12 @@
 from gpiozero import LED
 from time import sleep
+import sys
+file_path = sys.argv[1]  #prende argomento da linea di comando
 
-file = open('./input.txt','r')
+#print(file_path)
+
+file = open(file_path,'r')  
+
 
 stringa = file.read()
 
