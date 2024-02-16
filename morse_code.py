@@ -33,12 +33,7 @@ def encrypt(message):
             cipher += '/' #spazio tra le parole
     return cipher
 
-
-
 led=LED(17)
-
-
-
 
 oneUnit = 0.1 # un unita di tempo
 def lampeggia(mors):
@@ -59,7 +54,6 @@ def lampeggia(mors):
         elif letter == '/':
             led.off()
             sleep(5*oneUnit) #spazio tra le parole 
-
 
 print(encrypt(stringa))
 
