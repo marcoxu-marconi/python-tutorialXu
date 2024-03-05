@@ -54,6 +54,7 @@ def lampeggia(mors):
         elif letter == '/':
             led.off()
             sleep(5*oneUnit) #spazio tra le parole 
+    led.off();
 
 print(encrypt(stringa))
 
