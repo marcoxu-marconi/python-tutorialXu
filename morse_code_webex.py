@@ -2,7 +2,6 @@ import requests
 import json
 import time
 from gpiozero import LED
-import unicodedata
 
 led=LED(17)
 
@@ -79,7 +78,6 @@ print(
 #     print ("Room name: '" + room['title'] + "' ID: " + room['id'])
 
 roomNameToSearch = 'Morse Code'
-
 
 roomIdToMessage = None
 
